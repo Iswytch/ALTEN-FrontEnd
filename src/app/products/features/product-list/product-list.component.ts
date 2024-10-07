@@ -1,7 +1,11 @@
 import { Component, OnInit, inject, signal } from "@angular/core";
 import { Product } from "app/products/data-access/product.model";
+
 import { ProductsService } from "app/products/data-access/products.service";
+import { CartService } from "app/products/data-access/shop-cart.service";
+
 import { ProductFormComponent } from "app/products/ui/product-form/product-form.component";
+
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { DataViewModule } from 'primeng/dataview';
@@ -40,6 +44,8 @@ export class ProductListComponent implements OnInit {
   public isCreation = false;
   public readonly editedProduct = signal<Product>(emptyProduct);
 
+  constructor(private cart : CartService){}
+
   ngOnInit() {
     this.productsService.get().subscribe();
   }
@@ -48,6 +54,10 @@ export class ProductListComponent implements OnInit {
     this.isCreation = true;
     this.isDialogVisible = true;
     this.editedProduct.set(emptyProduct);
+  }
+
+  public addToCart(product : Product) {
+    this.cart.addToCart(product);
   }
 
   public onUpdate(product: Product) {

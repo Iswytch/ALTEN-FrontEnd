@@ -1,0 +1,23 @@
+<h1 class="text-center">Panier</h1>
+<h3 class="text-center">{{getCart().length}} article(s) : {{ getCartTotalPrice() }} €</h3>
+
+<p-dataView #dv [value]="getCartProductAndOcc()">
+    <ng-template pTemplate="list" let-groupedProductsAndOcc>
+        @for (productAndOcc of groupedProductsAndOcc; track productAndOcc) {
+            <p-card class="block mb-2">
+                <div class="flex justify-content-between">
+                    <div class=" flex align-items-center text-lg font-medium text-900 mt-2 pr-3">{{ productAndOcc.product.name }}  
+                        <div class="border-1 border-round p-1 ml-2 text-700">x {{ productAndOcc.count }}</div>
+                    </div>
+                    <div class="text-lg font-medium text-900 mt-2">{{ productAndOcc.product.image }}</div>
+                </div>
+
+                <ng-template pTemplate="footer">
+                    <div class="flex gap-3 mt-1">
+                        <p-button label="Supprimer" severity="danger" (onClick)="removeFromCart(productAndOcc.product)" />
+                    </div>
+                </ng-template>
+            </p-card>
+        }
+    </ng-template>
+</p-dataView>
