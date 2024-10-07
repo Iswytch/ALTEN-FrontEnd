@@ -2,7 +2,7 @@ import { Component, OnInit, inject, signal } from "@angular/core";
 import { Product } from "app/products/data-access/product.model";
 
 import { ProductsService } from "app/products/data-access/products.service";
-import { CartService } from "app/products/data-access/shop-cart.service";
+import { CartService } from "app/shop-cart/data-access/shop-cart.service";
 
 import { ProductFormComponent } from "app/products/ui/product-form/product-form.component";
 

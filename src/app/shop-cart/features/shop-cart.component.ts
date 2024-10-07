@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from 'app/products/data-access/product.model';
-import { CartService } from 'app/products/data-access/shop-cart.service';
+import { CartService } from '../data-access/shop-cart.service';
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { DataViewModule } from 'primeng/dataview';
