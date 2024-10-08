@@ -25,7 +25,7 @@ const emptyProduct: Product = {
   inventoryStatus: "INSTOCK",
   rating: 0,
   createdAt: 0,
-  updatedAt: 0,
+  updatedAt: 0
 };
 
 @Component({

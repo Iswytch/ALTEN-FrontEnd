@@ -16,19 +16,19 @@ export class PanelMenuComponent {
 
   public readonly items: MenuItem[] = [
       {
-          label: 'Accueil',
-          icon: 'pi pi-home',
-          routerLink: ['/home']
+        label: 'Accueil',
+        icon: 'pi pi-home',
+        routerLink: ['/home']
       },
       {
-          label: 'Produits',
-          icon: 'pi pi-barcode',
-          routerLink: ['/products/list']
+        label: 'Produits',
+        icon: 'pi pi-barcode',
+        routerLink: ['/products/list']
       },
       {
-        label: 'Panier',
-        icon: 'pi pi-shopping-cart',
-        routerLink: ['/shop-cart']
+        label: 'Contact',
+        icon: 'pi pi-envelope',
+        routerLink: ['/contact']
       }
   ]
 }

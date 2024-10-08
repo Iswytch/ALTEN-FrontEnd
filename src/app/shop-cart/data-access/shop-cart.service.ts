@@ -33,8 +33,13 @@ export class CartService {
     this.cart.update(cart => [...cart, product]);
   }
 
+  //Supprime tous les produits de la même catégorie
+  public removeOneCatFromCart(product: Product) {
+    this.cart.update(cart => cart.filter(p => p.id !== product.id));
+  }
+
   //Supprimer 1 seul produit 
-  public removeFromCart(product: Product) {
+  public removeOneProdFromCart(product: Product) {
     this.cart.update(cart => {
         const cartValue = [...cart];  // Créer une copie du tableau pour ne pas le modifier directement (ne marche pas sinon)
         const index = cartValue.findIndex(p => p.id === product.id);

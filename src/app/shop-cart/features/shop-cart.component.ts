@@ -5,6 +5,8 @@ import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
+import { PrimeIcons } from 'primeng/api';
+
 
 @Component({
   selector: 'app-shop-cart',
@@ -21,8 +23,12 @@ export class ShopCartComponent {
     this.cartService.addToCart(product);
   }
 
-  public removeFromCart(product: Product){
-    this.cartService.removeFromCart(product);
+  public removeOneProdFromCart(product: Product){
+    this.cartService.removeOneProdFromCart(product);
+  }
+
+  public removeOneCatFromCart(product: Product){
+    this.cartService.removeOneCatFromCart(product);
   }
 
   public getCart() {

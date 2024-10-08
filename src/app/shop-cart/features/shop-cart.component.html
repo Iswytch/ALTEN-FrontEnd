@@ -14,7 +14,8 @@
 
                 <ng-template pTemplate="footer">
                     <div class="flex gap-3 mt-1">
-                        <p-button label="Supprimer" severity="danger" (onClick)="removeFromCart(productAndOcc.product)" />
+                        <p-button label="Supprimer (-1)" severity="danger" (onClick)="removeOneProdFromCart(productAndOcc.product)" ></p-button>
+                        <p-button label="Supprimer" severity="danger" (onClick)="removeOneCatFromCart(productAndOcc.product)" ></p-button>
                     </div>
                 </ng-template>
             </p-card>
