@@ -6,11 +6,22 @@
     <ng-template pTemplate="list" let-products>
         @for (product of products; track product) {
             <p-card class="block mb-2">
-                <span class="font-medium text-secondary text-sm">{{ product.category }}</span>
-                <div class="text-lg font-medium text-900 mt-2">{{ product.name }}</div>
+                <span class="font-medium text-secondary text-m">{{ product.category }}</span>
+                <div class="flex justify-content-between">
+                    <div class="flex">
+                        <div class="text-lg font-medium text-900 mt-2 pr-3">{{ product.name }}</div>
+                        <div class="text-lg font-medium text-900 mt-2 border-left-1 px-3">{{ product.rating }} <span class="pi pi-star-fill"></span> </div>
+                        <div class="text-lg font-medium text-900 mt-2 border-left-1 px-3">{{ product.price }}€</div>
+                        <div class="text-lg font-medium text-900 mt-2 border-left-1 px-3">{{ product.inventoryStatus }}</div>
+                    </div>
+                    <div class="text-lg font-medium text-900 mt-2">{{ product.image }}</div>
+                </div>
+                <div class="text-sm font-medium text-800 pt-3">{{ product.description }}</div>
 
+                
                 <ng-template pTemplate="footer">
                     <div class="flex gap-3 mt-1">
+                        <p-button label="Ajouter au panier" severity="primary" (onClick)="addToCart(product)"/>
                         <p-button label="Modifier" severity="secondary" (onClick)="onUpdate(product)"/>
                         <p-button label="Supprimer" severity="danger" (onClick)="onDelete(product)" />
                     </div>
