@@ -15,7 +15,7 @@ import { CartService } from "./shop-cart/data-access/shop-cart.service";
   imports: [RouterModule, SplitterModule, ToolbarModule, PanelMenuComponent],
 })
 export class AppComponent {
-  title = "ALTEN SHOP";
+  title = "SHIP SHOP";
 
   constructor(private cartService: CartService) {}
 

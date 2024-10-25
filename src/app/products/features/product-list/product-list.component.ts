@@ -47,7 +47,7 @@ export class ProductListComponent implements OnInit {
   constructor(private cart : CartService){}
 
   ngOnInit() {
-    this.productsService.get().subscribe();
+    this.productsService.getAllProducts().subscribe();
   }
 
   public onCreate() {
@@ -67,16 +67,16 @@ export class ProductListComponent implements OnInit {
   }
 
   public onDelete(product: Product) {
-    this.productsService.delete(product.id).subscribe();
+    //this.productsService.delete(product.id).subscribe();
   }
 
   public onSave(product: Product) {
-    if (this.isCreation) {
-      this.productsService.create(product).subscribe();
-    } else {
-      this.productsService.update(product).subscribe();
-    }
-    this.closeDialog();
+  //   if (this.isCreation) {
+  //     this.productsService.create(product).subscribe();
+  //   } else {
+  //     this.productsService.update(product).subscribe();
+  //   }
+  //   this.closeDialog();
   }
 
   public onCancel() {
